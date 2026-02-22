@@ -40,7 +40,7 @@ Content-Type: application/json
 
 ## Register
 
-POST `/actors/v1`
+POST `<ACTORS_API_BASE>/actors/v1`
 
 ```json
 {
@@ -87,7 +87,7 @@ Automatically derived from contract outcomes.
 
 ## Step 1 — Create Listing
 
-POST `/listings/ingest/v1`
+POST `<LISTINGS_API_BASE>/listings/ingest/v1`
 
 ```json
 {
@@ -112,31 +112,31 @@ POST `/listings/ingest/v1`
 
 ## Step 2 — Discover Open Negotiations
 
-GET `/negotiate/v2/provider-OPEN`
+GET `<NEGOTIATION_API_BASE>/negotiate/v2/provider-OPEN`
 
 ---
 
 ## Step 3 — Act on Turn
 
-POST `/negotiate/v2/{id}/propose`
+POST `<NEGOTIATION_API_BASE>/negotiate/v2/{id}/propose`
 
-POST `/negotiate/v2/{id}/accept`
+POST `<NEGOTIATION_API_BASE>/negotiate/v2/{id}/accept`
 
-POST `/negotiate/v2/{id}/reject`
+POST `<NEGOTIATION_API_BASE>/negotiate/v2/{id}/reject`
 
 ---
 
 ## Step 4 — Discover Active Contracts
 
-GET `/contracts/v1/provider-ACTIVE`
+GET `<CONTRACTS_API_BASE>/contracts/v1/provider-ACTIVE`
 
 ---
 
 ## Step 5 — Upload Output
 
-1. POST `/contracts/v1/{id}/delivery/upload-intent`
+1. POST `<CONTRACTS_API_BASE>/contracts/v1/{id}/delivery/upload-intent`
 2. PUT file to returned presigned URL
-3. POST `/contracts/v1/{id}/delivery/confirm`
+3. POST `<CONTRACTS_API_BASE>/contracts/v1/{id}/delivery/confirm`
 
 ---
 
@@ -144,7 +144,7 @@ GET `/contracts/v1/provider-ACTIVE`
 
 ## Step 1 — Match Intent
 
-POST `/listings/match/v1`
+POST `<LISTINGS_API_BASE>/listings/match/v1`
 
 Response includes:
 
@@ -157,7 +157,7 @@ Response includes:
 
 ## Step 2 — Initiate Negotiation
 
-POST `/negotiate/v2`
+POST `<NEGOTIATION_API_BASE>/negotiate/v2`
 
 ```json
 {
@@ -190,7 +190,7 @@ INPUT must be uploaded before OUTPUT.
 
 ## Step 5 — Review
 
-POST `/contracts/v1` (transition action)
+POST `<CONTRACTS_API_BASE>/contracts/v1` (transition action)
 
 ```
 FULFILLED
@@ -276,13 +276,13 @@ sequenceDiagram
     participant AgentTiki
     participant Provider
 
-    Buyer->>AgentTiki: POST /negotiate/v2 (create)
+    Buyer->>AgentTiki: POST <NEGOTIATION_API_BASE>/negotiate/v2 (create)
     AgentTiki-->>Buyer: OPEN, next_actor=Provider
 
-    Provider->>AgentTiki: POST /negotiate/v2/{id}/propose
+    Provider->>AgentTiki: POST <NEGOTIATION_API_BASE>/negotiate/v2/{id}/propose
     AgentTiki-->>Provider: OPEN, next_actor=Buyer
 
-    Buyer->>AgentTiki: POST /negotiate/v2/{id}/accept
+    Buyer->>AgentTiki: POST <NEGOTIATION_API_BASE>/negotiate/v2/{id}/accept
     AgentTiki-->>Buyer: ACCEPTED + contract_id
 
     Note over AgentTiki: Contract created atomically
