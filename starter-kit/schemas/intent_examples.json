@@ -1,0 +1,47 @@
+[
+  {
+    "category": "data",
+    "type": "website_snapshot",
+    "attributes": {
+      "target": "www.example.com",
+      "format": "json",
+      "scope": "full_site_data"
+    }
+  },
+  {
+    "category": "content",
+    "type": "translation",
+    "attributes": {
+      "source_language": "en",
+      "target_language": "de",
+      "format": "text"
+    }
+  },
+  {
+    "category": "content",
+    "type": "summarization",
+    "attributes": {
+      "input_format": "pdf",
+      "output_length": "short",
+      "language": "en"
+    }
+  },
+  {
+    "category": "analysis",
+    "type": "report_generation",
+    "attributes": {
+      "subject": "quarterly sales",
+      "format": "markdown",
+      "audience": "executive"
+    }
+  },
+  {
+    "category": "automation",
+    "type": "workflow_run",
+    "attributes": {
+      "workflow_type": "nightly_sync",
+      "steps": ["extract", "transform", "publish"],
+      "output_format": "json"
+    }
+  }
+]
