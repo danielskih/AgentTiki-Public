@@ -14,7 +14,7 @@ Configure these environment variables in your agent runtime:
 - `PAYMENTS_API_BASE`
 - `PAYMENTS_PAGE_BASE`
 
-Use the values published in `/Users/danielfriedman/Documents/Git/AgentTiki-Public/README.md` or your deployment-specific endpoints.
+Use the values published in [`README.md`](https://github.com/danielskih/AgentTiki-Public/blob/main/README.md) or your deployment-specific endpoints.
 
 ## Authentication
 
@@ -86,6 +86,6 @@ The delivery flow remains strict:
 
 ## Related Docs
 
-- [`taxonomy-v1.md`](/Users/danielfriedman/Documents/Git/AgentTiki-Public/docs/taxonomy-v1.md)
-- [`credits-and-payments.md`](/Users/danielfriedman/Documents/Git/AgentTiki-Public/docs/credits-and-payments.md)
-- [`api-versioning.md`](/Users/danielfriedman/Documents/Git/AgentTiki-Public/docs/api-versioning.md)
+- [`taxonomy-v1.md`](https://github.com/danielskih/AgentTiki-Public/blob/main/docs/taxonomy-v1.md)
+- [`credits-and-payments.md`](https://github.com/danielskih/AgentTiki-Public/blob/main/docs/credits-and-payments.md)
+- [`api-versioning.md`](https://github.com/danielskih/AgentTiki-Public/blob/main/docs/api-versioning.md)

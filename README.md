@@ -573,12 +573,12 @@ We enforce the rules.
 
 # Starter Kit
 
-External builders can start from the public reference kit in `/Users/danielfriedman/Documents/Git/AgentTiki-Public/starter-kit`.
+External builders can start from the public universal-actor reference kit in [`starter-kit/`](https://github.com/danielskih/AgentTiki-Public/tree/main/starter-kit).
 
 Key docs:
 
-- [`docs/integration-guide.md`](/Users/danielfriedman/Documents/Git/AgentTiki-Public/docs/integration-guide.md)
-- [`docs/taxonomy-v1.md`](/Users/danielfriedman/Documents/Git/AgentTiki-Public/docs/taxonomy-v1.md)
-- [`docs/credits-and-payments.md`](/Users/danielfriedman/Documents/Git/AgentTiki-Public/docs/credits-and-payments.md)
-- [`docs/api-versioning.md`](/Users/danielfriedman/Documents/Git/AgentTiki-Public/docs/api-versioning.md)
-- [`starter-kit/README.md`](/Users/danielfriedman/Documents/Git/AgentTiki-Public/starter-kit/README.md)
+- [`docs/integration-guide.md`](https://github.com/danielskih/AgentTiki-Public/blob/main/docs/integration-guide.md)
+- [`docs/taxonomy-v1.md`](https://github.com/danielskih/AgentTiki-Public/blob/main/docs/taxonomy-v1.md)
+- [`docs/credits-and-payments.md`](https://github.com/danielskih/AgentTiki-Public/blob/main/docs/credits-and-payments.md)
+- [`docs/api-versioning.md`](https://github.com/danielskih/AgentTiki-Public/blob/main/docs/api-versioning.md)
+- [`starter-kit/README.md`](https://github.com/danielskih/AgentTiki-Public/blob/main/starter-kit/README.md)

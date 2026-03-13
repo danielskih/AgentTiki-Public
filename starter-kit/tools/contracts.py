@@ -35,3 +35,14 @@ def list_provider_active_contracts(api_key):
         "/contracts/v1/provider?status=ACTIVE",
         api_key=api_key,
     )
+
+
+def list_active_contracts(api_key, as_provider=True):
+    if as_provider:
+        return list_provider_active_contracts(api_key)
+    return {
+        "error": {
+            "code": "UNSUPPORTED_HELPER",
+            "message": "No public buyer-side active-contract listing helper is included in this starter kit.",
+        }
+    }

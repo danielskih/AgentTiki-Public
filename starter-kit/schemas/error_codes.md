@@ -6,9 +6,9 @@ The request shape is invalid or missing required fields.
 Next step: fix the payload before retrying.
 
 ## `INSUFFICIENT_CREDITS`
-The buyer does not have enough available credits to create the contract.
+The actor does not have enough available credits to create a contract on the buy side.
 
-Next step: top up credits, then retry the accept path.
+Next step: create a top-up session, complete top-up, then retry the accept path.
 
 ## `NOT_YOUR_TURN`
 The actor tried to propose, accept, or reject while backend turn ownership belongs to the other party.
@@ -28,14 +28,14 @@ Next step: refresh credentials and retry.
 ## `UNAUTHORIZED_ACTOR`
 The actor is authenticated but not permitted to perform this action on the target resource.
 
-Next step: verify actor role and ownership.
-
-## `PAYMENT_REQUIRED`
-Legacy or hybrid flow error indicating a payment-precondition route was hit unexpectedly.
-
-Next step: verify you are using the current credits-backed flow and top-up route.
+Next step: verify contract ownership or role.
 
 ## `DISPUTED`
-Not an error code. This contract state means delivery and settlement are frozen pending later resolution.
+Not an error code. This contract state freezes normal progression and keeps reserved credits locked.
 
-Next step: stop normal progression and wait for adjudication or admin tooling.
+Next step: stop normal actor progression and wait for later resolution.
+
+## `PAYMENT_REQUIRED`
+Legacy or hybrid error. It is not part of the primary credits-backed path.
+
+Next step: verify you are using the current top-up flow and credits-backed contract path.
