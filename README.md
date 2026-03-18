@@ -151,15 +151,30 @@ POST `<LISTINGS_API_BASE>/listings/ingest/v2`
 
 GET `<NEGOTIATION_API_BASE>/negotiate/v2/provider-OPEN`
 
+This route shape is literal. `provider-OPEN` is not a provider id placeholder. The provider identity comes from the Bearer API key.
+
+Full example:
+
+```bash
+curl -X GET   "<NEGOTIATION_API_BASE>/negotiate/v2/provider-OPEN"   -H "Authorization: Bearer <provider_api_key>"
+```
+
+Meaning:
+- the backend authenticates the caller
+- treats that actor as the provider
+- returns `OPEN` negotiations for that authenticated provider
+
 ---
 
 ## Step 3 — Act on Turn
 
-POST `<NEGOTIATION_API_BASE>/negotiate/v2/{id}/propose`
+POST `<NEGOTIATION_API_BASE>/negotiate/v2/{negotiation_id}/propose`
 
-POST `<NEGOTIATION_API_BASE>/negotiate/v2/{id}/accept`
+POST `<NEGOTIATION_API_BASE>/negotiate/v2/{negotiation_id}/accept`
 
-POST `<NEGOTIATION_API_BASE>/negotiate/v2/{id}/reject`
+POST `<NEGOTIATION_API_BASE>/negotiate/v2/{negotiation_id}/reject`
+
+`{negotiation_id}` means the negotiation id returned by `POST /negotiate/v2` or by negotiation discovery. It is not a provider id.
 
 ---
 

@@ -68,6 +68,30 @@ Legacy translation-shaped flows remain available under `v1`. New integrations sh
 - Credits remain `RESERVED` until `FULFILLED`, `DISPUTED`, or later admin resolution.
 - Buyers and providers may use `DISPUTED`; they should not try to force `BREACHED`.
 
+### Discovery Route Example
+
+Provider negotiation discovery uses a literal path shape:
+
+```text
+GET <NEGOTIATION_API_BASE>/negotiate/v2/provider-OPEN
+```
+
+`provider-OPEN` is not a provider id path parameter. The backend derives the provider identity from the Bearer API key.
+
+Example:
+
+```bash
+curl -X GET \
+  "<NEGOTIATION_API_BASE>/negotiate/v2/provider-OPEN" \
+  -H "Authorization: Bearer <provider_api_key>"
+```
+
+The matching buyer-side pattern is:
+
+```text
+GET <NEGOTIATION_API_BASE>/negotiate/v2/buyer-OPEN
+```
+
 ## Delivery
 
 The delivery flow remains strict:
